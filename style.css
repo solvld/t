@@ -103,6 +103,10 @@ main{
   border-radius: 0.8rem;
   margin-bottom: 1rem;
 }
+
+.task .content{
+  flex: 1 1 0%;
+}
 .task .content .text{
   color: gainsboro;
   width: 100%;

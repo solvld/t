@@ -14,10 +14,11 @@ window.addEventListener('load',() =>{
       return;
     }
 
+    if(list_el){
+      title.style.display = "flex"
+    }
     
-    title.style.display = "flex"
     
-
     const task_el = document.createElement("div");
     task_el.classList.add("task");
 
@@ -29,7 +30,7 @@ window.addEventListener('load',() =>{
     const task_input_el = document.createElement("input");
     task_input_el.classList.add("text");
     
-    task_input_el.type = "text";
+    
     task_input_el.value = task;
     task_input_el.setAttribute("readonly", "readonly");
 
@@ -61,12 +62,16 @@ window.addEventListener('load',() =>{
           task_input_el.removeAttribute("readonly");
           task_input_el.focus();
           task_edit_el.innerHTML = "Save";
-      } else {
+      } else if (task_edit_el.innerHTML.toLowerCase()== "save" && task_input_el.value == "" ){
+          list_el.removeChild(task_el);
+      }else {
           task_input_el.setAttribute("readonly","readonly");
           task_edit_el.innerHTML = "Edit";
       }
     })
 
-    task_delete_el.addEventListener('click',() => {})
+    task_delete_el.addEventListener('click',() => {
+      list_el.removeChild(task_el);
+    })
   })
 })
