@@ -50,6 +50,9 @@ input, button{
 #task-input::placeholder{
   color: gainsboro;
 }
+#task-input:focus::placeholder{
+  opacity: 0.4;
+}
 
 #task-submit{
   color: rebeccapurple;
@@ -89,6 +92,7 @@ main{
   font-weight: 300;
   margin-bottom: 1rem;
   color: gainsboro;
+  display: none;
 }
 
 .task{
@@ -104,6 +108,7 @@ main{
   width: 100%;
   font-size: 1.125rem;
   display: block;
+  text-transform: capitalize;
   transition: 0.3s;
 }
 .task .content .text:not(:read-only){
